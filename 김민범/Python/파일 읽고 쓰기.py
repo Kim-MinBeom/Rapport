@@ -15,15 +15,15 @@ while True :
     line = f.readline()
     if not line : break
     print(line)
-
+    
 print("*" * 30)
 f.close()
 
 # readlines함수
 f = open("C:/Users/cosmos/Documents/GitHub/Rapport/김민범/Python/파일 읽고 쓰기 실습.txt", 'r')
 lines = f.readlines()
-for line in lines :
-    print(line)
+print(lines)
+
 f.close()
 
 print("*" * 30)
