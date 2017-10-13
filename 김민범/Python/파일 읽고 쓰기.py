@@ -46,4 +46,4 @@ f.close()
 # with
 with open("C:/Users/cosmos/Documents/GitHub/Rapport/김민범/Python/파일 읽고 쓰기 실습.txt", "w") as f :
     f.write("Life is too short, you need python")
-    f.print()
+
