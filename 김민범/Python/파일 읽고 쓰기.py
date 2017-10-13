@@ -35,3 +35,15 @@ print(data)
 f.close()
 
 print("*" * 30)
+
+# 파일에 새로운 내용 추가
+f = open("C:/Users/cosmos/Documents/GitHub/Rapport/김민범/Python/파일 읽고 쓰기 실습.txt", 'a')
+for i in range(11,15) :
+    data = "%d번째 줄입니다.\n" % i
+    f.write(data)
+f.close()
+
+# with
+with open("C:/Users/cosmos/Documents/GitHub/Rapport/김민범/Python/파일 읽고 쓰기 실습.txt", "w") as f :
+    f.write("Life is too short, you need python")
+    f.print()
