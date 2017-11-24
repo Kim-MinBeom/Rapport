@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>munu</title>
+</head>
+
+<style>
+     .menu-neamnh {
+     background-color: #fff;
+     border-radius: 0;
+     margin-bottom: 0;
+     border: none;
+    }
+    header.sidebar.menu-neamnh {
+     overflow: visible;
+    }
+    .menu-neamnh.navbar .navbar-brand img {
+     max-width: 100%;
+     max-height: 100px;
+    }
+    .menu-neamnh .navbar-nav {
+     margin: 0px;
+    }
+    .menu-neamnh .navbar-nav .dropdown .dropdown-menu {
+     top: 0;
+     left: 100%;
+     border-radius: 0;
+     padding: 8px 0;
+     text-align: left;
+     box-shadow: none;
+    }
+    .menu-neamnh .dropdown-toggle .fa {
+     float: right;
+     line-height: 1.6;
+    }
+    .menu-neamnh #tpl-logo-text {
+     color: initial;
+     color: #000000;
+     font-family: 'Playfair Display', 'Nanum Gothic', Tahoma, Dotum, Verdana, Arial, 'Trebuchet MS';
+     font-size: 19px;
+     font-weight: 900;
+     letter-spacing: 0.05em;
+     line-height: 1.2;
+     word-wrap: break-word;
+    }
+    .menu-neamnh ul.navbar-nav > li > a ,
+    .menu-neamnh .dropdown-menu > li > a {
+     font-family: 'Playfair Display', 'Lato';
+    }
+    .menu-neamnh ul.navbar-nav > li > a ,
+    .menu-neamnh ul.navbar-nav > li > a:focus {
+      text-align: left;
+        background-color: transparent;
+        font-style: italic;
+     font-size: 13px;
+        font-weight: 400;
+     line-height: 1.8;
+     letter-spacing: 0.025em;
+     color: #959595;
+    }
+    .menu-neamnh .dropdown-menu > li > a ,
+    .menu-neamnh .dropdown-menu > li > a:focus {
+     font-style: italic;
+     font-size: 13px;
+     font-weight: 400;
+     line-height: 1;
+     letter-spacing: 0.025em;
+     color: #959595;
+     background-color: transparent;
+    }
+    .menu-neamnh.navbar-default .navbar-nav > li > a:hover, 
+    .menu-neamnh.navbar-default .navbar-nav > li:hover > a, 
+    .menu-neamnh.navbar-default .navbar-nav > li.active > a, 
+    .menu-neamnh.navbar-default .navbar-nav > li.active > a:focus, 
+    .menu-neamnh.navbar-default .navbar-nav > li.active > a:hover,
+    .menu-neamnh.navbar-default .dropdown-menu > li > a:hover, 
+    .menu-neamnh.navbar-default .dropdown-menu > li:hover > a,
+    .menu-neamnh.navbar-default .dropdown-menu > li.active > a,
+    .menu-neamnh.navbar-default .dropdown-menu > li.active > a:focus,
+    .menu-neamnh.navbar-default .dropdown-menu > li.active > a:hover {
+     color: #000000;
+     background-color: transparent;
+    }
+    @media only screen and (min-width: 769px) {
+     .menu-neamnh {
+         width: 260px;
+         min-height: 500px;
+     }
+     .menu-neamnh .menu-inner {
+         position: relative;
+         top: 0;
+         left: 0;
+     }
+     .menu-neamnh.navbar .navbar-brand {
+         width: 100%;
+         padding: 0 20px 0 20%;
+         padding-bottom: 30px;
+     }
+     .menu-neamnh .navbar-header {
+         margin-top: 90px;
+         margin-bottom: 60px;
+     }
+     .menu-neamnh ul.navbar-nav > li > a,
+    .menu-neamnh ul.navbar-nav > li > a:focus {
+         padding: 10px;
+         padding-left: 20%;
+         line-height: 1.2;
+     }
+     .menu-neamnh .dropdown:hover .dropdown-menu {
+         display: block;
+     }
+        .menu-neamnh .navbar-left-collapse {
+          height: auto;
+         border-top: 0;
+            box-shadow: none;
+         max-height: none;
+         padding-left: 0;
+         padding-right: 0;
+     }
+     .menu-neamnh .navbar-left-collapse.collapse {
+         display: block !important;
+         width: auto !important;
+         padding-bottom: 80px;
+         overflow: visible !important;
+     }
+     .menu-neamnh .navbar-left-collapse.in {
+         overflow-x: visible;
+     }
+     .menu-neamnh .navbar-left {
+         margin-right: 0;
+         margin-left: 0;
+     }
+      .menu-neamnh .navbar-nav,
+    .menu-neamnh .navbar-nav > li,
+    .menu-neamnh .navbar-left,
+    .menu-neamnh .navbar-right,
+    .menu-neamnh .navbar-header {
+         float: none !important;
+     }
+     .menu-neamnh .navbar-right .dropdown-menu {
+         left: 0;
+         right: auto;
+     }
+     .menu-neamnh .dropdown-menu {
+         min-width: 100px;
+     }
+     .menu-neamnh .dropdown-menu > li > a,
+    .menu-neamnh .dropdown-menu > li > a:focus {
+         background-color: transparent;
+         padding: 10px 20px;
+     }
+     .menu-neamnh .navbar-left-collapse .navbar-nav.navbar-right:last-child {
+         margin-right: 0;
+       }
+    }
+    @media only screen and  (max-width:768px) {
+     .menu-neamnh {
+         width: 100%;
+     }
+     .fixed .menu-neamnh .navbar-left-collapse {
+         max-height: 340px;
+         overflow-y: auto;
+     }
+     .menu-neamnh.navbar .navbar-header .navbar-brand {
+         padding: 0 15px;
+         text-align: left;
+         line-height: 70px;
+         max-height: 70px;
+         overflow: hidden;
+         max-width: 70%;
+     }
+     .menu-neamnh #tpl-logo-text {
+         line-height: 70px;
+         text-overflow: ellipsis;
+         white-space: nowrap;
+         overflow: hidden;
+         display: block;
+     }
+     .menu-neamnh.navbar .navbar-header .navbar-brand img {
+         max-width: 150px;
+         max-height: 45px;
+     }
+     .menu-neamnh .dropdown-toggle .fa:before {
+         content: "\f0d7";
+     }
+     .menu-neamnh .navbar-nav .dropdown .dropdown-menu {
+         padding-left: 25px;
+         width: 100%;
+         background-color: #fff;
+     }
+     .menu-neamnh .dropdown-menu > li > a,
+    .menu-neamnh .dropdown-menu > li > a:focus {
+            padding: 7px 0;
+     }
+        .menu-neamnh.navbar-default .navbar-nav > li > a, 
+    .menu-neamnh.navbar-default .navbar-nav > li > a:focus, 
+    .menu-neamnh.navbar-default .navbar-nav > li > a:hover, 
+    .menu-neamnh.navbar-default .navbar-nav > li:hover > a, 
+    .menu-neamnh.navbar-default .navbar-nav > li.active > a, 
+    .menu-neamnh.navbar-default .navbar-nav > li.active > a:focus, 
+    .menu-neamnh.navbar-default .navbar-nav > li.active > a:hover {
+         background-color: #fff;
+     }
+     .menu-neamnh ul.navbar-nav > li > a ,
+    .menu-neamnh ul.navbar-nav > li > a:focus {
+         font-weight: bold;
+     }
+     .menu-neamnh .dropdown-menu > li > a ,
+    .menu-neamnh .dropdown-menu > li > a:focus {
+          font-weight: normal;
+     }
+    }
+
+</style>
+<body>
+    <header class="menu-neamnh  tpl_menu navbar navbar-default sidebar" role="navigation">
+        <div class="menu-inner">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".menu-neamnh-collapse-dropdown">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/config" id="site-home">
+                  <img src="//i.addblock.net/template/main_logo.png" class="hide" data-attach="true">
+                    <span id="tpl-logo-text" class="" data-selector="#tpl-logo-text">ALBERTO<br>MONDI</span>
+                </a>
+            </div>
+
+            <div class="collapse navbar-left-collapse menu-neamnh-collapse-dropdown">
+                <ul class="nav navbar-nav text-center" id="tpl-menu">
+                    <li class="active"><a href="#">Home</a></li>
+                 <li class=""><a href="#">Portfolio</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <i class="fa fa-caret-right"></i></a>
+                        <ul class="dropdown-menu">
+                         <li><a href="#">Biography</a></li>
+                         <li><a href="#">Client</a></li>
+                         <li><a href="#">History</a></li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+</body>
+</html>

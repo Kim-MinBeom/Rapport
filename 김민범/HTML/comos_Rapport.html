@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cosm</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1" />
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+
+	<style>
+	/* Initialization Code */
+	*{
+		margin: 0;
+		padding: 0;
+		font-family: '맑은고딕', 'Malgun Gothic', Gothic, sans-serif;
+	}
+
+	a {text-decoration: none;}
+
+	li {list-style: none; }
+
+	/* Layout Code*/
+	body {
+		width: 100%; margin: 0;
+		min-height: 100%;
+		background: #E0E0E0;
+		}
+
+	#di1{
+		width: 15%;
+		min-height: 100%;
+		opacity: 0.7;
+		position: fixed;
+		float: left;	
+	}
+
+	div h3 {
+		padding: 50px 0px 40px 20px;
+		font-size: 2.5em;
+		color: rgba(0,0,0,0.4);
+	}
+
+	.navi {
+		font-size: 1em;
+		padding-left: 50px;
+		color: rgba(0,0,0,0.5);
+	}
+
+	.navi li {
+		line-height: 200%; 
+	}
+
+	#di2{
+		margin-left: 15%;
+		width: 85%;
+		min-height: 100%;
+		float: left;
+		background: #ffffff;
+	}
+
+	.content { 
+		width: 100%;
+		height: 700px;
+		min-height: 90%;
+	}
+
+	.img {
+		overflow: hidden;
+		color: #c9c9c9;
+		background-image: url('img/lone_tree.jpg');
+		background-position: center;
+		background-size: cover; 
+		background-repeat: no-repeat;
+	}
+
+	.infor { 
+		width: 50px; 
+		padding-top: 20%;
+		padding-bottom: 30%;
+		margin-left: 33%; 
+		font-size: 5em;
+		font-style: italic; 
+		letter-spacing: 20px;
+		font-weight: bold;
+		/* color: rgba(30,30,30,0.3); */
+		color: rgba(255,255,255,0.8); 
+	}
+
+	.about {
+		max-height: 100%;
+	}
+
+	.explan, .poto_ex, .poto {
+		padding: 10%;
+		background: #E0E0E0;	
+		opacity: 0.7;
+	}
+
+	footer {
+		text-align: right;
+		background: #E0E0E0;
+		font-style: italic; 
+		letter-spacing: 10px;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+		color: rgb(30,87,153); /* Old browsers */
+		color: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+		color: -webkit-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		color: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		color: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+	}
+	</style>
+
+	<style>
+		@media screen and (max-width:767px){
+			body {width: auto;}
+			#di1, #di2, #footer {width: auto; float: none;}
+			}
+		@media screen and (min-width:768px and (max-width: 959px){
+			body {width: auto;}
+			#di1, #di2, #footer {width: auto; float: none;}
+			}
+	</style>
+
+	
+</head>
+
+<body>
+	<div id = di1>
+		<div class="title">	
+			<h3>cosmos</h3>
+		</div>
+		<div class="navi">
+			<li>img</li>		
+			<li>About</li>
+			<li>poto</li>
+		</div>
+	</div>
+	<div id=di2>
+		<div class="content">
+			<div class="img">
+				<div class="infor">
+					<p>COSMOS</p>
+				</div>
+			</div>
+		<div class="About">
+			<div class="explan">
+				explanation
+				<hr/>	
+			</div>
+		</div>
+		<div class="poto_ex">
+			poto_ex
+			<hr/>
+		</div>
+		<div class="poto">
+			<p>poto</p>
+			<hr/>
+		</div>
+		<footer>
+			<hr/>
+			<strong>□Rapport</strong>
+		</footer>
+	</div>
+
+</body>
+</html>

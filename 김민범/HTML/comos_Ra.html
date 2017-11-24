@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cosm</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1" />
+</head>
+
+<style>
+	/* Initialization Code */
+	*{
+		margin: 0;
+		padding: 0;
+		font-family: '맑은고딕', 'Malgun Gothic', Gothic, sans-serif;
+	}
+
+	a {text-decoration: none;}
+
+	li {list-style: none; }
+
+	/* Layout Code*/
+	body {
+		width: 100%; margin: 0;
+		height: 100%;
+		background: #E0E0E0;
+		border: 1px solid black;
+		overflow: scroll;
+	}
+
+	div.di1{
+		width: 17%;
+		height: 90%;
+		float: left;
+		position: fixed;
+	}
+
+	div.di2{
+		margin-left: 17%;
+		width: 83%;
+		height: 90%;
+		float: left;
+		overflow-x: hidden;
+		background: #ffffff;
+	}
+
+	.content { 
+		width: 100%;
+	}
+	.img {
+		overflow: hidden;
+		color: #c9c9c9;
+		padding-bottom: 40%;
+		background-image: url('img/oriWallPaper2_1.jpg');
+		background-size: 100%; 
+		background-repeat: no-repeat;
+	}
+
+	.infor { 
+		width: 50px; 
+		padding-top: 25%;
+		margin-left: 45%; 
+		font-size: 2em; 
+	}
+
+	div.footer {
+		border-top: 1px dashed blue;
+		clear:both;
+		width: 100%;
+		height: 10%;
+	}
+</style>
+
+<style>
+	@media screen and (max-width:767px){
+		body {width: auto;}
+	}
+	@media screen and (min-width:768px and (max-width: 959px){
+		body {width: auto;}
+	}
+
+</style>
+
+<body>
+	<div class ="di1">
+		<div class="title">	
+			<h3>cosmos</h3>
+		</div>
+		<div class="navi">
+			<li>img</li>		
+			<li>About</li>
+			<li>poto</li>
+			</div>
+		</div>	
+		<div class="di2">
+			<div class="content">
+				<div class="img">
+					<div class="infor">
+						<p>COSMOS</p>
+						<P>homepage</P>
+					</div>
+				</div>
+				<div class="About">
+					<p>explanation</p>	
+				</div>
+				<div class="poto">
+				</div>
+			</div>
+		</div>
+	
+		<div class="footer">
+			<p>RAPPORT</p>	
+		</div>
+	</div>
+
+</body>
+</html>

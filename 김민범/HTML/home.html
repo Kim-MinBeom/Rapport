@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cosm_Rapport</title>
+</head>
+
+<body class="pace-disable ">
+ 
+<form id='flogin' name='flogin' method='post' action='/member/login/in'>
+<input type='hidden' name='url' id='login-referer' value=''/>
+<div class="main-login modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="//i.addblock.net/fa-close-modal.png" alt="close" width="20" height="19" data-pagespeed-url-hash="2634659894" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></span></button>
+        <h4 class="modal-title" id="myModalLabel">&nbsp;</h4>
+      </div>
+      <div class="modal-body">
+		<div class="text-center"><img src="//i.addblock.net/modal-logo-dark.png" width="170" height="28" alt="creatorlink logo" data-pagespeed-url-hash="4102491618" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></div>
+        <div class='login form-group'>
+        	<input type="text" id='mb_id' name='mb_id' class="form-control" placeholder="Email Address">
+        	<input type="password" id='mb_password' name='mb_password' class="form-control" placeholder="Password">
+        	<div class="row">
+	        	<label class='remember col-md-6 col-sm-6 col-xs-6'><input type="checkbox"/> <span data-lang="page.member.login-modal.reId">Stay signed in</span></label>
+	        	<label class='forget col-md-6 col-sm-6 col-xs-6'><a href='/member/support/password_reset' data-lang="page.member.login-modal.password-reset">Forgot password?</a></label>
+        	</div>
+        </div>
+        <div class='btn-wrap'>
+        	<a href='#' class='btn btn-primary btn-lg btn-block' onclick='goSubmit()' data-lang="config.modal.login">LOGIN</a>
+        	<div class="hr-box"><hr/></div>
+        	<a href='#' class='btn btn-lg btn-block btn-fblogin' onclick='FaceBookLoginAPI()' data-lang="config.modal.fblogin"><i class="fa fa-facebook"></i> FACEBOOK</a>
+        </div>
+		<div class="bottom-box">
+			<span data-lang="page.member.login-modal.jointext">Not a member yet?</span> <a href='/member/join' data-lang="page.member.login-modal.join">Register now</a>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+<style id='loadfonts'>@font-face{font-family:'Arial';src:url(//storage.googleapis.com/cr-resource/fonts/ArialMT.eot);src:url(//storage.googleapis.com/cr-resource/fonts/ArialMT.eot?#iefix) format('embedded-opentype') , url(//storage.googleapis.com/cr-resource/fonts/ArialMT.woff) format('woff') , url(//storage.googleapis.com/cr-resource/fonts/ArialMT.ttf) format('truetype');font-style:normal;font-weight:normal}</style>
+<style>body{overflow:auto}.dsgn-body{height:100%}.fixed{right:0}.flat-modal .modal{overflow-y:auto}</style>
+<style id='dsgn-body'>body{color:#565656;background-color:#fff;background-image:;background-position:center center;background-repeat:repeat;background-size:auto;font-family:'Lato','Nanum Gothic','Tahoma','Dotum','Verdana','Arial','Trebuchet MS';font-size:14px}body a{color:#08c}body a:hover{color:#049de2;text-decoration:none}body a:active{color:#0073b6}body .alternative-font{color:#08c}body .text-bg{background-color:#08c!important}body .pagination>.active>a,body .pagination>.active>span,body .pagination>.active>a:hover,body .pagination>.active>span:hover,body .pagination>.active>a:focus,body .pagination>.active>span:focus{background-color:#08c!important}body .btn-primary,body .pagination>.active>a,body ul.nav-pills>li.active>a{border-color:#006da3;background-color:#08c}body .btn-primary:hover,body .pagination>.active>a:hover,body ul.nav-pills>li.active>a:hover{border-color:#0074ad;background-color:#008fd6}body .btn-primary:focus,body .pagination>.active>a:focus,body ul.nav-pills>li.active>a:focus{border-color:#007ab8;background-color:#007ab8}body .progress-bar-primary{background-color:#08c}body .btn-default,body .btn-default.btn-lg,body .btn-default.btn-sm,body .btn-default.btn-xs{border-color:#08c;background-color:transparent;color:#08c}body .btn-default:hover,body .btn-default.btn-lg:hover,body .btn-default.btn-sm:hover,body .btn-default.btn-xs:hover{border-color:#049de2;background-color:#0d0d0d;color:#049de2}body .btn-default:focus,body .btn-default.btn-lg:focus,body .btn-default.btn-sm:focus,body .btn-default.btn-xs:focus{border-color:#0073b6;background-color:#000;color:#0073b6}body .btn-success{border-color:#87c940;background-color:#a0d468}body .btn-success:hover{border-color:#91cd50;background-color:#a5d670}body .btn-success:focus{border-color:#96cf58;background-color:#96cf58}body .btn-info{border-color:#22b1e3;background-color:#4fc1e9}body .btn-info:hover{border-color:#34b7e6;background-color:#58c4ea}body .btn-info:focus{border-color:#3dbbe7;background-color:#3dbbe7}body .btn-warning{border-color:#f6b81c;background-color:#f8c74d}body .btn-warning:hover{border-color:#f7be30;background-color:#f8ca57}body .btn-warning:focus{border-color:#f7c139;background-color:#f7c139}body .btn-danger{border-color:#d61629;background-color:#ea3547}body .btn-danger:hover{border-color:#e7192e;background-color:#eb3e4f}body .btn-danger:focus{border-color:#e82336}body .label-primary{background-color:#08c!important}body .label-default{color:#08c;background-color:transparent;border-color:#08c}body .label-success{background-color:#a0d468}body .label-info{background-color:#4fc1e9}body .label-warning{background-color:#f8c74d}body .label-danger{background-color:#ea3547}body .label-dark{background-color:#2d343e}body .alert-success{background-color:#d2ebb7}body .alert-info{background-color:#aae1f4}body .alert-warning{background-color:#fce6af}body .alert-danger{background-color:#f8c0c5}body .progress-bar-success{background-color:#a0d468}body .progress-bar-info{background-color:#4fc1e9}body .progress-bar-warning{background-color:#f8c74d}body .progress-bar-danger{background-color:#ea3547}body div.tabs ul.nav-tabs a,body div.tabs ul.nav-tabs a:hover{color:#08c}body div.tabs ul.nav-tabs a:hover{border-top-color:#08c}body div.tabs ul.nav-tabs li.active a{border-top-color:#08c;color:#08c}body header ul>li:hover>a,body header ul li.active>a,body header ul li.active>a:hover,body header ul li.active>a:focus,body header ul li.active i.icon-caret-down{color:#08c}</style>
+<div class='dsgn-body sidebar'>
+	<style id="menu-newstudy">.menu-newstudy{background-color:#fff;border-radius:0;margin-bottom:0;border:none;font-family:"Lato","Nanum Gothic","Tahoma","Dotum","Verdana","Arial","Trebuchet MS","Nanum gothic","Nanum gothic"}header.sidebar.menu-newstudy{overflow:visible}.menu-newstudy.navbar .navbar-brand img{max-width:100%;max-height:100px}.menu-newstudy .navbar-nav{margin:0}.menu-newstudy .navbar-nav .dropdown .dropdown-menu{top:0;left:100%;border-radius:0;padding:8px 0;text-align:left;box-shadow:none}.menu-newstudy .dropdown-toggle .fa{float:right;line-height:1.6}.menu-newstudy #tpl-logo-text{color:initial #000;font-family:'Playfair Display','Nanum Gothic',Tahoma,Dotum,Verdana,Arial,'Trebuchet MS';font-size:19px;font-weight:900;letter-spacing:.05em;line-height:1.2;word-wrap:break-word}.menu-newstudy ul.navbar-nav>li>a,.menu-newstudy .dropdown-menu>li>a{font-family:'Playfair Display','Lato'}.menu-newstudy ul.navbar-nav>li>a,.menu-newstudy ul.navbar-nav>li>a:focus{text-align:left;background-color:transparent;font-style:italic;font-size:13px;font-weight:400;line-height:1.8;letter-spacing:.025em;color:#959595}.menu-newstudy .dropdown-menu>li>a,.menu-newstudy .dropdown-menu>li>a:focus{font-style:italic;font-size:13px;font-weight:400;line-height:1;letter-spacing:.025em;color:#959595;background-color:transparent}.menu-newstudy.navbar-default .navbar-nav>li>a:hover,.menu-newstudy.navbar-default .navbar-nav>li:hover>a,.menu-newstudy.navbar-default .navbar-nav>li.active>a,.menu-newstudy.navbar-default .navbar-nav>li.active>a:focus,.menu-newstudy.navbar-default .navbar-nav>li.active>a:hover,.menu-newstudy.navbar-default .dropdown-menu>li>a:hover,.menu-newstudy.navbar-default .dropdown-menu>li:hover>a,.menu-newstudy.navbar-default .dropdown-menu>li.active>a,.menu-newstudy.navbar-default .dropdown-menu>li.active>a:focus,.menu-newstudy.navbar-default .dropdown-menu>li.active>a:hover{color:#000;background-color:transparent}@media only screen and (min-width:769px){.menu-newstudy{width:260px;min-height:500px}.menu-newstudy .menu-inner{position:relative;top:0;left:0}.menu-newstudy.navbar .navbar-brand{width:100%;padding:0 20px 0 20%;padding-bottom:30px}.menu-newstudy .navbar-header{margin-top:90px;margin-bottom:60px}.menu-newstudy ul.navbar-nav>li>a,.menu-newstudy ul.navbar-nav>li>a:focus{padding:10px;padding-left:20%;line-height:1.2}.menu-newstudy .dropdown:hover .dropdown-menu{display:block}.menu-newstudy .navbar-left-collapse{height:auto;border-top:0;box-shadow:none;max-height:none;padding-left:0;padding-right:0}.menu-newstudy .navbar-left-collapse.collapse{display:block!important;width:auto!important;padding-bottom:80px;overflow:visible!important}.menu-newstudy .navbar-left-collapse.in{overflow-x:visible}.menu-newstudy .navbar-left{margin-right:0;margin-left:0}.menu-newstudy .navbar-nav,.menu-newstudy .navbar-nav>li,.menu-newstudy .navbar-left,.menu-newstudy .navbar-right,.menu-newstudy .navbar-header{float:none!important}.menu-newstudy .navbar-right .dropdown-menu{left:0;right:auto}.menu-newstudy .dropdown-menu{min-width:100px}.menu-newstudy .dropdown-menu>li>a,.menu-newstudy .dropdown-menu>li>a:focus{background-color:transparent;padding:10px 20px}.menu-newstudy .navbar-left-collapse .navbar-nav.navbar-right:last-child{margin-right:0}}@media only screen and (max-width:768px){.menu-newstudy{width:100%}.fixed .menu-newstudy .navbar-left-collapse{max-height:340px;overflow-y:auto}.menu-newstudy.navbar .navbar-header .navbar-brand{padding:0 15px;text-align:left;line-height:70px;max-height:70px;overflow:hidden;max-width:70%}.menu-newstudy #tpl-logo-text{line-height:70px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block}.menu-newstudy.navbar .navbar-header .navbar-brand img{max-width:150px;max-height:45px}.menu-newstudy .dropdown-toggle .fa:before{content:"\f0d7"}.menu-newstudy .navbar-nav .dropdown .dropdown-menu{padding-left:25px;width:100%;background-color:#fff}.menu-newstudy .dropdown-menu>li>a,.menu-newstudy .dropdown-menu>li>a:focus{padding:7px 0}.menu-newstudy.navbar-default .navbar-nav>li>a,.menu-newstudy.navbar-default .navbar-nav>li>a:focus,.menu-newstudy.navbar-default .navbar-nav>li>a:hover,.menu-newstudy.navbar-default .navbar-nav>li:hover>a,.menu-newstudy.navbar-default .navbar-nav>li.active>a,.menu-newstudy.navbar-default .navbar-nav>li.active>a:focus,.menu-newstudy.navbar-default .navbar-nav>li.active>a:hover{background-color:#fff}.menu-newstudy ul.navbar-nav>li>a,.menu-newstudy ul.navbar-nav>li>a:focus{font-weight:bold}.menu-newstudy .dropdown-menu>li>a,.menu-newstudy .dropdown-menu>li>a:focus{font-weight:normal}}</style>	<header class="menu-newstudy  tpl_menu navbar navbar-default sidebar" role="navigation">
+    <div class="menu-inner">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".menu-newstudy-collapse-dropdown">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/config" id="site-home">
+                <img src="//i.addblock.net/template/main_logo.png" class="hide" data-attach="true" data-pagespeed-url-hash="1173991352" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                <span id="tpl-logo-text" class="" data-selector="#tpl-logo-text">ALBERTO<br>MONDI</span>
+            </a>
+        </div>
+
+        <div class="collapse navbar-left-collapse menu-newstudy-collapse-dropdown">
+            <ul class="nav navbar-nav hide preloading text-center" id="tpl-menu">
+                <li class="active"><a href="#">Home</a></li>
+                <li class=""><a href="#">Portfolio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <i class="fa fa-caret-right"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Biography</a></li>
+                        <li><a href="#">Client</a></li>
+                        <li><a href="#">History</a></li>
+                    </ul>
+                </li>
+                <li class=""><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="carousel slide carousel-fade userEL20547" id="carousel" data-ride="carousel">
+  <ol class="carousel-indicators" data-nav="true">
+    <li class="active" data-target=".#carousel" data-slide-to="0"></li>
+    <li data-target=".#carousel" data-slide-to="1" class=""></li>
+    <li data-target=".#carousel" data-slide-to="2" class=""></li>
+</ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner" data-loop="true">
+
+    <div class="item active">
+      <div class="fill userEL20547-bg1" data-target=".userEL20547-bg1" data-attach="true"></div>
+        <div class="bigHeader slideUp">
+          <h1 class="figure-title" data-selector="h1" data-edit="true">ALBERTO MONDI</h1>
+          <p class="figure-caption" data-selector="p" data-edit="true">PHOTOGRAPHER & ART DIRECTOR</p>
+        </div>        
+    </div>
+
+    <div class="item">
+      <div class="fill  userEL20547-bg2" data-target=".userEL20547-bg2" data-attach="true"></div>
+        <div class="bigHeader slideUp">
+          <h1 class="figure-title" data-selector="h1" data-edit="true">ALBERTO MONDI</h1>
+          <p class="figure-caption" data-selector="p" data-edit="true">PHOTOGRAPHER & ART DIRECTOR</p>
+        </div>                  
+    </div>
+
+    <div class="item">
+      <div class="fill  userEL20547-bg3" data-target=".userEL20547-bg3" data-attach="true"></div>
+        <div class="bigHeader slideUp">
+          <h1 class="figure-title" data-selector="h1" data-edit="true">ALBERTO MONDI</h1>
+          <p class="figure-caption" data-selector="p" data-edit="true">PHOTOGRAPHER & ART DIRECTOR</p>
+        </div>                  
+    </div>
+    
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#carousel" data-slide="prev"></a>
+  <a class="carousel-control right" href="#carousel" data-slide="next"></a>
+</div><div class="userEL23499">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-xs-12 col-sm-3 col-md-3">
+                <h5 class="up" data-edit="true" data-selector="h5.up">ABOUT ME</h5>
+            </div>
+
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <p class="text" data-edit="true" data-selector="p.text">Morbi a semper nibh, sed mollis eros. Ut in diam a ante pretium semper at nec mauris. Curabitur in massa eget turpis maximus varius sed in ipsum. Aenean rhoncus vestibulum felis. Aliquam quis sem quis elit pellentesque accumsan. Suspendisse potenti. Maecenas vulputate lorem vel erat egestas, ac porta nisl mattis. Sed porta est ac lorem varius, id eleifend ex consequat. Aenean luctus nisl nec mi tempus, at rhoncus est viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent imperdiet vehicula nibh non commodo. Sed imperdiet euismod urna fringilla fermentum.</p>
+            </div>
+
+        </div>
+    </div>
+</div><div class="userEL23532">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-6 col-sm-3 col-md-3">
+                <h5 class="up" data-edit="true" data-selector="h5.up">CLIENT</h5>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 col-md-3">
+                <p class="text" data-edit="true" data-selector="p.text">fermentum eget<br>enim egestas<br> Phasellus sit amet diam<br>venenatis<br>leo Donec felis<br>et netus et malesuada<br>fames ac turpis</p>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 col-md-3">
+                <p class="text" data-edit="true" data-selector="p.text">nunc laoreet<br>mauris eu neque nibh<br> porta senectus<br>consectetur<br>Nam vitae morbi tristique<br>orci<br>hendrerit habitant</p>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 col-md-3">
+                <p class="text" data-edit="true" data-selector="p.text">scelerisque<br>Sed vitae lorem<br.Quisque vitae pharetra<br>dictum nibh nisl <br> consectetur<br>elit at pretium ullamcorper<br>gravida justo</p>
+            </div>
+
+        </div>
+    </div>
+</div><div class="userEL62847">
+    <div class="container">
+        <div class="row" data-matrix-loop="true" data-matrix-column="3">
+
+            <div class="col-xs-4 col-sm-4 col-md-4 item">
+                <div class="img-wrap">
+                    <img src="//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/650/gratisography__(6).jpg" class="img-responsive" data-attach="true" data-pagespeed-url-hash="1358039280" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                </div>
+                <div class="text-box">
+                    <h5 class='up' data-edit="true" data-selector="h5.up">LANDSCAPE</h5>
+                    <p class="desc" data-edit="true" data-selector="p">Curabitur tempus lectus sit amet orci laoreet, a placerat leo sodales. Aliquam suscipit, eros in blandit luctus, sapien magna efficitur enim at vehicula.</p>
+                </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4 item">
+                <div class="img-wrap">
+                    <img src="//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/650/2014-11-Life-of-Pix-free-stock-photos-birds-pattern-flight-Leeroy.jpg" class="img-responsive" data-attach="true" data-pagespeed-url-hash="1055780004" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                </div>
+                <div class="text-box">
+                    <h5 class='up' data-edit="true" data-selector="h5.up">ORGANISM</h5>
+                    <p class="desc" data-edit="true" data-selector="p">Aliquam et mauris ultricies, varius ipsum at, mollis diam Nullam mollis ante massa, vel vulputate lorem rutrum a Donec non laoreet nibh facilisis risus.</p>
+                </div>
+            </div>
+            
+            <div class="col-xs-4 col-sm-4 col-md-4 item">
+                <div class="img-wrap">
+                    <img src="//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/650/SplitShire-1351.jpg" class="img-responsive" data-attach="true" data-pagespeed-url-hash="1906920933" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                </div>
+                <div class="text-box">
+                    <h5 class='up' data-edit="true" data-selector="h5.up">PORTRAIT</h5>
+                    <p class="desc last" data-edit="true" data-selector="p">Donec et velit ultricies, gravida lorem at, pretium nibh. Morbi lacinia leo et ipsum condimentum ullamcorper. Donec scelerisque accumsan quam aliquam eros.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><div class="userEL19269">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                    <h1 class="down" data-edit="true" data-selector="h1.down">“Hauntingly beautiful both visually and in the tenderness<br>it shows towards the photography”</h1>
+                  <p data-edit="true" data-selector="p">- Alfred Stieglitz</p>
+            </div>
+
+        </div>
+    </div>
+</div><div class='userEL33169 preloading'>
+  <div class='container'>
+    <div class='row' data-loop='true' data-view='12'>
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/Unsplash_photo-1422640805998-18a4dd89bec2.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/Unsplash_photo-1422640805998-18a4dd89bec2.jpg' class='img-responsive' data-pagespeed-url-hash="2856330260" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                          <h5 class='figure' data-selector='h5.figure' data-font='true' data-title='gallery title font' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                          <p class='figure' data-selector='p.figure' data-font='true' data-title='gallery caption font' data-ie-clamp='2,1,1'>you can change this text</p>
+                   </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/androidwallpape_03188_wasitalladream_2048x2048.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/androidwallpape_03188_wasitalladream_2048x2048.jpg' class='img-responsive' data-pagespeed-url-hash="3230678477" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                   </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/unsplash_78c8dff1.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/unsplash_78c8dff1.jpg' class='img-responsive' data-pagespeed-url-hash="3973378456" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/nsplash_photo-1425136738262-212551713a58.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/nsplash_photo-1425136738262-212551713a58.jpg' class='img-responsive' data-pagespeed-url-hash="3089144595" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/Unsplash_photo-1422284763110-6d0edd657b13.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/Unsplash_photo-1422284763110-6d0edd657b13.jpg' class='img-responsive' data-pagespeed-url-hash="219868357" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/littlevisuals_tumblr_mscnmcqOQG1sdyj9lo1_1280.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/littlevisuals_tumblr_mscnmcqOQG1sdyj9lo1_1280.jpg' class='img-responsive' data-pagespeed-url-hash="936701078" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/Unsplash_photo-1424274414501-ce96d567b5c5.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/Unsplash_photo-1424274414501-ce96d567b5c5.jpg' class='img-responsive' data-pagespeed-url-hash="2834716894" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/unsplash_photo-1417021423914-070979c8eb34.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/unsplash_photo-1417021423914-070979c8eb34.jpg' class='img-responsive' data-pagespeed-url-hash="2964822877" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/androidwallpape_IMG_0037.JPG' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/androidwallpape_IMG_0037.JPG' class='img-responsive' data-pagespeed-url-hash="3420866432" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/androidwallpape_tripping_on_cosmos_by_lomatic-d7kfjal.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/androidwallpape_tripping_on_cosmos_by_lomatic-d7kfjal.jpg' class='img-responsive' data-pagespeed-url-hash="1918473580" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/androidwallpape_03658_nightfallatlakeaurora_2560x1600.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/androidwallpape_03658_nightfallatlakeaurora_2560x1600.jpg' class='img-responsive' data-pagespeed-url-hash="3741008387" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/2015-02-Life-of-Pix-free-stock-photos-pink-jellyfish-water-Hide-Obara.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/2015-02-Life-of-Pix-free-stock-photos-pink-jellyfish-water-Hide-Obara.jpg' class='img-responsive' data-pagespeed-url-hash="309019821" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+
+      <div class='col-xs-6 col-sm-4 col-md-3 grid'>
+            <a href='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/unsplash_photo-1416949929422-a1d9c8fe84af.jpg' data-gallery=''>
+              <figure>
+                <img src='//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/800/unsplash_photo-1416949929422-a1d9c8fe84af.jpg' class='img-responsive' data-pagespeed-url-hash="232286505" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                <figcaption>
+                    <div class='inner-box'>
+                      <h5 class='figure' data-ie-clamp='2,1,1'>SAMPLE</h5> 
+                      <p class='figure' data-ie-clamp='2,1,1'>you can change this text</p>
+                    </div>
+                </figcaption>
+              </figure>
+            </a>
+      </div>
+
+
+    </div>
+  </div>
+</div><div class="userEL1024725 preloading">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 clear-left">
+                <div class="table-top-line"></div>
+                <table class="table">
+                    <thead>
+                        <tr class="thead-bottom-line">
+                            <th class="tpl-forum-num">no</th>
+                            <th>title</th>
+                            <th class="tpl-forum-name">name</th>
+                            <th class="tpl-forum-date">date</th>
+                            <th class="tpl-forum-hit">view</th>
+                        </tr>
+                    </thead>
+                    <tbody data-loop="true" data-view="10">
+                        <tr>
+                            <td scope="row" class="tpl-forum-list-num"><i class="fa fa-volume-up"></i></td>
+                            <td class="tpl-forum-list-content"><span class="tpl-forum-list-title">Frequently asked question about this pages and delevery process while ordered post didn't arrive</span> <i class="fa fa-comment-o tpl-forum-list-comment-icon"></i> <span class="tpl-forum-list-comment">7</span></td>
+                            <td class="tpl-forum-list-name">admin</td>
+                            <td class="tpl-forum-list-date">now</td>
+                            <td class="tpl-forum-list-hit">50</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">9</td>
+                            <td>Good design.I will be glad if you see my latest work.</td>
+                            <td>Jack</td>
+                            <td>5 hour ago</td>
+                            <td>175</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">8</td>
+                            <td>awesome work..really very inspirational job.congrats</td>
+                            <td>David James</td>
+                            <td>3 days ago</td>
+                            <td>534</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">7</td>
+                            <td>Beautiful design and layout.. Great job</td>
+                            <td>BaByliss</td>
+                            <td>dev 22</td>
+                            <td>51</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">6</td>
+                            <td>Amazing work one really feels like in a stone age. Impressive!</td>
+                            <td>Oliver Warren</td>
+                            <td>dev 7</td>
+                            <td>235</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">5</td>
+                            <td>Unbelievable divat not dive project itself is awesome but it's presentation here... congratulations!</td>
+                            <td>DIANA</td>
+                            <td>nov 31</td>
+                            <td>165</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">4</td>
+                            <td>Excellent work! Great presentation!</td>
+                            <td>Jett</td>
+                            <td>nov 18</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">3</td>
+                            <td>od design.I will be glad if you see my latest work.</td>
+                            <td>Lincoln</td>
+                            <td>nov 17</td>
+                            <td>266</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2</td>
+                            <td>Beautiful design and layout.. Great job</td>
+                            <td>Blaise</td>
+                            <td>nov 13</td>
+                            <td>369</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>Amazing work one really feels like in a stone age. Impressive!</td>
+                            <td>Raphael</td>
+                            <td>nov 4</td>
+                            <td>16</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-bottom-line"></div>
+
+                <nav class="text-center">
+                    <ul class="pagination pagination-sm tpl-forum-pagination">
+                        <li><a href="#" data-label="prev"><i class="fa fa-angle-left"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#" data-label="next"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </nav>
+                <button type="button" class="btn btn-default btn-sm tpl-forum-write">write</button>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 search-box">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <select id="sfl" class="form-control" name="sfl" placeholder="Search">
+                            <option value="all">all</option>
+                            <option value="title">title</option>
+                            <option value="content">content</option>
+                        </select>
+                    </div>
+                    <input type="text" id="stx" class="form-control" name="stx"> 
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default search-btn"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><div class="userEL1024705 preloading">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 search-box">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <select id="sfl" class="form-control" name="sfl" placeholder="Search">
+                            <option value="all">all</option>
+                            <option value="title">title</option>
+                            <option value="content">content</option>
+                        </select>
+                    </div>
+                    <input type="text" id="stx" class="form-control" name="stx"> 
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default search-btn"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 clear-left">
+                <div class="table-top-line"></div>
+                <table class="table">
+                    <thead>
+                        <tr class="thead-bottom-line">
+                            <th class="tpl-forum-num">no</th>
+                            <th>title</th>
+                            <th class="tpl-forum-name">name</th>
+                            <th class="tpl-forum-date">date</th>
+                            <th class="tpl-forum-hit">view</th>
+                        </tr>
+                    </thead>
+                    <tbody data-loop="true" data-view="10">
+                        <tr>
+                            <td scope="row" class="tpl-forum-list-num"><i class="fa fa-volume-up"></i></td>
+                            <td class="tpl-forum-list-content"><span class="tpl-forum-list-title">Frequently asked question about this pages and delevery process while ordered post didn't arrive</span> <i class="fa fa-comment-o tpl-forum-list-comment-icon"></i> <span class="tpl-forum-list-comment">7</span></td>
+                            <td class="tpl-forum-list-name">admin</td>
+                            <td class="tpl-forum-list-date">now</td>
+                            <td class="tpl-forum-list-hit">50</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">9</td>
+                            <td>Good design.I will be glad if you see my latest work.</td>
+                            <td>Jack</td>
+                            <td>5 hour ago</td>
+                            <td>175</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">8</td>
+                            <td>awesome work..really very inspirational job.congrats</td>
+                            <td>David James</td>
+                            <td>3 days ago</td>
+                            <td>534</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">7</td>
+                            <td>Beautiful design and layout.. Great job</td>
+                            <td>BaByliss</td>
+                            <td>dev 22</td>
+                            <td>51</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">6</td>
+                            <td>Amazing work one really feels like in a stone age. Impressive!</td>
+                            <td>Oliver Warren</td>
+                            <td>dev 7</td>
+                            <td>235</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">5</td>
+                            <td>Unbelievable divat not dive project itself is awesome but it's presentation here... congratulations!</td>
+                            <td>DIANA</td>
+                            <td>nov 31</td>
+                            <td>165</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">4</td>
+                            <td>Excellent work! Great presentation!</td>
+                            <td>Jett</td>
+                            <td>nov 18</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">3</td>
+                            <td>od design.I will be glad if you see my latest work.</td>
+                            <td>Lincoln</td>
+                            <td>nov 17</td>
+                            <td>266</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2</td>
+                            <td>Beautiful design and layout.. Great job</td>
+                            <td>Blaise</td>
+                            <td>nov 13</td>
+                            <td>369</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>Amazing work one really feels like in a stone age. Impressive!</td>
+                            <td>Raphael</td>
+                            <td>nov 4</td>
+                            <td>16</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-bottom-line"></div>
+
+                <nav class="text-center">
+                    <ul class="pagination pagination-sm tpl-forum-pagination">
+                        <li><a href="#" data-label="prev"><i class="fa fa-angle-left"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#" data-label="next"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </nav>
+                <button type="button" class="btn btn-default btn-sm tpl-forum-write">write</button>
+            </div>
+
+        </div>
+    </div>
+</div>
