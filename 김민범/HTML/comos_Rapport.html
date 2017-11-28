@@ -7,8 +7,6 @@
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-
-
 	<style>
 	/* Initialization Code */
 	*{
@@ -52,7 +50,12 @@
 		line-height: 200%; 
 	}
 
+	.navi li p:focus {
+		opacity: 0.4;
+	}
+
 	#di2{
+		z-index: 1;
 		margin-left: 15%;
 		width: 85%;
 		min-height: 100%;
@@ -69,23 +72,31 @@
 	.img {
 		overflow: hidden;
 		color: #c9c9c9;
-		background-image: url('img/lone_tree.jpg');
+		/*background-image: url('img/lone_tree.jpg');
 		background-position: center;
 		background-size: cover; 
-		background-repeat: no-repeat;
+		background-repeat: no-repeat;*/
+		max-height: 100%;
+	}
+
+	.mySlides {
+		overflow: hidden;
+		z-index: 0;
+		position: relative;
 	}
 
 	.infor { 
-		width: 50px; 
-		padding-top: 20%;
-		padding-bottom: 30%;
-		margin-left: 33%; 
+		position: relative;
+		top : -550px;
+		left: 450px;
+		width: 50px;  
 		font-size: 5em;
 		font-style: italic; 
 		letter-spacing: 20px;
 		font-weight: bold;
 		/* color: rgba(30,30,30,0.3); */
 		color: rgba(255,255,255,0.8); 
+		z-index: 3;
 	}
 
 	.about {
@@ -113,6 +124,19 @@
 	</style>
 
 	<style>
+		 a:link { color: rgba(0,0,0,0.5); text-decoration: none;}
+ 		 a:visited { color: rgba(0,0,0,0.5); text-decoration: none;}
+		.top {
+			z-index: 3;
+			margin-left: 95%;
+			margin-top: 42%; 
+			text-align: right;
+			position: fixed;
+			color: rgba(255,255,255,0.1);
+			font-size: 3em;
+		}
+	</style>
+	<style>
 		@media screen and (max-width:767px){
 			body {width: auto;}
 			#di1, #di2, #footer {width: auto; float: none;}
@@ -122,7 +146,6 @@
 			#di1, #di2, #footer {width: auto; float: none;}
 			}
 	</style>
-
 	
 </head>
 
@@ -132,29 +155,57 @@
 			<h3>cosmos</h3>
 		</div>
 		<div class="navi">
-			<li>img</li>		
-			<li>About</li>
-			<li>poto</li>
+			<li><p>▶</p><a href="#About">About</a></li>
+			<li><p>▶</p><a href="#poto_ex">poto_ex</a></li>
+			<li><p>▶</p><a href="#poto">poto</a></li>
 		</div>
+	</div>
+	<div class=top>
+		<a href="#img">△</a>
 	</div>
 	<div id=di2>
 		<div class="content">
-			<div class="img">
+			<a name="img"></a>
+			<div class= tit>
+				<div class="img">
+					<img class="mySlides" src="img/lone_tree2.jpg" style=" width: 100%">
+					<img class="mySlides" src="img/oriWallPaper50.jpg" style="width: 100%">
+					<img class="mySlides" src="img/building-1089861_1920.jpg" style="width:100%">
+				</div>
 				<div class="infor">
 					<p>COSMOS</p>
 				</div>
 			</div>
+			<script type="text/javascript">
+				var myIndex = 0;
+				carousel();
+
+				function carousel() {
+    				var i;
+    				var x = document.getElementsByClassName("mySlides");
+    				for (i = 0; i < x.length; i++) {
+    	   			x[i].style.display = "none";  
+   				 }
+    				myIndex++;
+    				if (myIndex > x.length) {myIndex = 1}    
+    				x[myIndex-1].style.display = "block";  
+    				setTimeout(carousel, 5000);    
+				}
+		</script>
 		<div class="About">
+			<a name="About">
 			<div class="explan">
 				explanation
 				<hr/>	
 			</div>
 		</div>
 		<div class="poto_ex">
+			<a name="poto_ex"></a>
 			poto_ex
 			<hr/>
 		</div>
 		<div class="poto">
+			<a name="poto"></a>
 			<p>poto</p>
 			<hr/>
 		</div>
