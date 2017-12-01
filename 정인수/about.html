@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rapport</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1" />
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+	<style>
+	/* Initialization Code */
+	*{
+		margin: 0;
+		padding: 0;
+		font-family: '맑은고딕', 'Malgun Gothic', Gothic, sans-serif;
+	}
+
+	a {text-decoration: none;}
+
+	li {list-style: none; }
+
+	/* Layout Code*/
+	body {
+		width: 100%; margin: 0;
+		min-height: 100%;
+		background: #E0E0E0;
+		}
+
+	#di1{
+		width: 15%;
+		min-height: 100%;
+		opacity: 0.7;
+		position: fixed;
+		float: left;
+	}
+
+	div h3 {
+		padding: 50px 0px 40px 20px;
+		font-size: 2.5em;
+		color: rgba(0,0,0,0.4);
+	}
+
+	.navi {
+		font-size: 1em;
+		padding-left: 50px;
+		color: rgba(0,0,0,0.5);
+	}
+
+	.navi li {
+		line-height: 200%;
+	}
+
+	.navi li p:focus {
+		opacity: 0.4;
+	}
+
+	#di2{
+		z-index: 1;
+		margin-left: 15%;
+		width: 85%;
+		min-height: 100%;
+		float: left;
+		background: #ffffff;
+	}
+
+	.content {
+		width: 100%;
+		height: 700px;
+		min-height: 90%;
+	}
+
+	.img {
+		overflow: hidden;
+		color: #c9c9c9;
+		/*background-image: url('img/lone_tree.jpg');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;*/
+		max-height: 100%;
+	}
+
+	.mySlides {
+		overflow: hidden;
+		z-index: 0;
+		position: relative;
+	}
+	.abab{
+		overflow:hidden;
+		z-index: 0;
+		position: relative;
+	}
+
+	.infor {
+		position: relative;
+		top : -550px;
+		left: 450px;
+		width: 50px;
+		font-size: 5em;
+		font-style: italic;
+		letter-spacing: 20px;
+		font-weight: bold;
+		/* color: rgba(30,30,30,0.3); */
+		color: rgba(255,255,255,0.8);
+		z-index: 3;
+	}
+
+	.about {
+		max-height: 200%;
+	}
+
+	.about, .poto_ex, .poto {
+		padding: 10%;
+		background: #E0E0E0;
+		opacity: 1;
+	}
+
+	footer {
+		text-align: right;
+		background: #E0E0E0;
+		font-style: italic;
+		letter-spacing: 10px;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+		color: rgb(30,87,153); /* Old browsers */
+		color: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+		color: -webkit-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		color: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		color: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+	}
+	</style>
+
+	<style>
+		 a:link { color: rgba(0,0,0,0.5); text-decoration: none;}
+ 		 a:visited { color: rgba(0,0,0,0.5); text-decoration: none;}
+		.top {
+			z-index: 3;
+			margin-left: 95%;
+			margin-top: 42%;
+			text-align: right;
+			position: fixed;
+			color: rgba(255,255,255,0.1);
+			font-size: 3em;
+		}
+	</style>
+	<style>
+		@media screen and (max-width:767px){
+			body {width: auto;}
+			#di1, #di2, #footer {width: auto; float: none;}
+			}
+		@media screen and (min-width:768px and (max-width: 959px){
+			body {width: auto;}
+			#di1, #di2, #footer {width: auto; float: none;}
+			}
+	</style>
+
+</head>
+
+<body>
+	<div id = di1>
+		<div class="title">
+			<h3>Rapport</h3>
+		</div>
+		<div class="navi">
+			<li><p>▶</p><a href="#About">About</a></li>
+			<li><p>▶</p><a href="#poto_ex">poto_ex</a></li>
+			<li><p>▶</p><a href="#poto">poto</a></li>
+		</div>
+	</div>
+	<div class=top>
+		<a href="#img">△</a>
+	</div>
+	<div id=di2>
+		<div class="content">
+			<a name="img"></a>
+			<div class= tit> <!--제1단락-->
+				<div class="img">
+					<img class="mySlides" src="img/lone_tree2.jpg" style=" width: 100%">
+					<img class="mySlides" src="img/oriWallPaper50.jpg" style="width: 100%">
+					<img class="mySlides" src="img/building-1089861_1920.jpg" style="width:100%">
+				</div>
+				<div class="infor">
+					<p>Rapport</p>
+				</div>
+			</div>
+			<script type="text/javascript">
+				var myIndex = 0;
+				carousel();
+
+				function carousel() {
+    				var i;
+    				var x = document.gestElementsByClassName("mySlides");
+    				for (i = 0; i < x.length; i++) {
+    	   			x[i].style.display = "none";
+   				 }
+    				myIndex++;
+    				if (myIndex > x.length) {myIndex = 1}
+    				x[myIndex-1].style.display = "block";
+    				setTimeout(carousel, 5000);
+				}
+		</script>
+		<div class="About"> <!--2단락-->
+			<a name="About">
+				About us
+				<hr/>
+				<h1>2학기 시간표</h1>
+				<table border="1">
+        <tr>
+          <th></th><th>월요일</th><th>화요일</th><th>수요일</th><th>목요일</th><th>금요일</th>
+        </tr>
+        <tr>
+          <th>1교시</th><th>수업(A,B,C)</th><th></th><th></th><th></th><th>수업(A,B)</th>
+        </tr>
+        <tr>
+          <th>2교시</th><th>수업(A,B,C)</th><th>수업(A,B,C)</th><th>수업(A)</th><th>수업(B)</th><th>수업(A,B)</th>
+        </tr>
+        <tr>
+          <th>3교시</th><th>수업(A,B)</th><th>CAD</th><th>수업(A)</th><th>수업(B)</th><th>일본어</th>
+        </tr>
+        <tr>
+          <th>4교시</th><th>수업(A,B)</th><th>CAD</th><th>수업(A,B)</th><th></th><th>일본어</th>
+        </tr>
+        <tr>
+          <th>5교시</th><th></th><th>수업(A)</th><th>수업(B)</th><th>수업(A,B)</th><th>수업(A,B)</th>
+        </tr>
+        <tr>
+          <th>6교시</th><th></th><th>교양</th><th></th><th>수업(A,B)</th><th>수업(A,B)</th>
+        </tr>
+        <tr>
+          <th>7교시</th><th>교양</th><th>교양</th><th>수업(A,B)</th><th>수업(A,B)</th><th>프로그래밍</th>
+        </tr>
+        <tr>
+        <th>8교시</th><th>교양</th><th></th><th></th><th>수업(A,B)</th><th>프로그래밍</th>
+      </tr>
+			<tr>
+			<th>9교시</th><th>영어</th><th></th><th></th><th></th><th></th>
+		</tr>
+		<tr>
+		<th><a href="https://www.w3schools.com/css/css_text.asp">10교시</a></th><th>영어</th><th></th><th></th><th></th><th></th>
+	</tr>
+</table>
+		<style>
+		h1 {
+    text-align: center;
+}
+		table {
+    width: 100%;
+}
+tr:hover {background-color: #f5f5f5;}
+th {
+    text-align: middle;
+		  height: 50px;
+		}
+</style>
+<li>Rapport는 현재까지 총 17명으로 구성되어있으며, 정보교류와 친목활동을 위해 만들어졌습니다.<br>
+	아직 1학년이고 배우고싶은게 많은 저희는 관심사를 통합하여 4개의 분과를 형성하였으며, 분과별로 시간을 서로 조율하여서 같이 공부할수있는 시간표를 만들었습니다.</li>
+		</div>
+		<div class="poto_ex"> <!--제3단락-->
+			<a name="poto_ex"></a>
+			poto_ex
+			<hr/>
+			<img src="KakaoTalk_20171122_090209593.jpg"style=" width: 75%">
+			<li>△ 실습실의 모습<br>
+				지천관 607호에 위치하고있는 실습실의 내부모습입니다. 여럿이 사용하는장소이니만큼 청결에 항상 힘쓰고있습니다.</li>
+			<img src="KakaoTalk_20171128_231944641.jpg" style=" width: 75%">
+			<li>△ 영어분과<br>
+				주 1회 약 2~3시간으로 이루어져있는 영어분과는, 분과장인 이주형과 분과생 6명으로 이루어져있습니다.<br>
+				영어를 듣고 쓰는 형식으로 되어있으며, 영어실력을 향상시키기위해 서로서로 노력하고있습니다.<br></li>
+				<img src="KakaoTalk_20171129_005031452.png" style=" width: 75%">
+				<li>△ AutoCAD로 만든 사고의 모습<br>
+					2학기 계열기초과목인 AutoCAD과목을 조금더 이해하고자 만들어진 CAD분과는 Rapport전원이 분과생으로 들어와있습니다.<br>
+					사용가능한 실습실의 컴퓨터가 많지않아, 주로 지천관 622호에서 실시하며, 도면그리기, 유용한 기능공유등 여러가지 활동을 하고있습니다.<br></li>
+					<img src="KakaoTalk_20171128_231853286.jpg" style=" width: 75%">
+					<li>△ 시원포럼 세미나의 모습<br>
+						학교에서 듣는 특강뿐만 아니라, 외부에서 하는 특강을 듣기도 합니다.<br>
+						2학기 시작이후 백스코, 부산은행등에서 진행하는 특강을 여럿 듣기도 하고, 행사, 박람회에 참석하여 다양한 기술들을 보기도합니다.<br></li>
+		</div>
+		<div class="poto"> <!--제4단락-->
+			<a name="poto"></a>
+			<p>poto</p>
+			<hr/>
+			<img src="KakaoTalk_20171103_201613236.jpg" style=" width: 50%">
+			<img src="KakaoTalk_20171110_034410285.jpg" style=" width: 50%">
+			<img src="KakaoTalk_20171110_224555087.jpg" style=" width: 50%">
+			<img src="KakaoTalk_20171115_235215128.jpg" style=" width: 50%">
+		</div>
+		<footer>
+			<hr/>
+			<strong>□Rapport</strong>
+		</footer>
+	</div>
+
+</body>
+</html>
