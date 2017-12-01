@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>FIBO Natural Science</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<style type="text/css">
+		#wrapper {
+			overflow-x: hidden;
+		}
+
+		.tit {
+			max-height: 780px;
+		}
+		.content { 
+			max-width: 100%;
+		}
+		.img {
+			overflow: hidden;
+			color: #c9c9c9;
+			max-width: 100%;
+			max-height: 960px; 	
+		}
+
+		.mySlides {
+			overflow: hidden;
+			z-index: 0;
+			position: relative;
+			max-width: 100%;	
+			opacity: 0.3;
+		}
+
+		#intro {
+			position: relative;
+			left: 30px;
+			top:-500px;
+			z-index: 3px;
+			overflow-y: hidden;
+		}
+
+		#footer {
+			text-align: right;
+			font-style: italic; 
+			letter-spacing: 5px;
+		}
+
+		</style>
+	</head>
+	<body>
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">Experimental Method</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					
+				<div class= tit>
+					<div class="img">
+						<img class="mySlides" src="images/dining-room-103464_1920.jpg" style=" width: 100%">
+						<img class="mySlides" src="images/hamburger-494706_1920.jpg" style="width: 100%">
+					</div>
+				<section id="intro">
+					<div class="inner">
+							<h1>음식 및 식당에 따른 사람의 기분변화</h1>
+							<p>음식 및 식당에 따른 사람의 기분변화를 실험을 통하여<br/> 분위기가 개인의 기분에 끼치는 영향과 특징을 알아보고</br/>데이터 시각화를 통하여 마케팅 전략을 세워주고자 주제를 정했습니다. </p>
+							<ul class="actions">
+							<li><a href="#one" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>	
+					</section>
+			</div>
+			<script type="text/javascript">
+				var myIndex = 0;
+				carousel();
+
+				function carousel() {
+    				var i;
+    				var x = document.getElementsByClassName("mySlides");
+    				for (i = 0; i < x.length; i++) {
+    	   			x[i].style.display = "none";
+   				 }
+    				myIndex++;
+    				if (myIndex > x.length) {myIndex = 1}    
+    				x[myIndex-1].style.display = "block";
+    				setTimeout(carousel, 3500); 
+				}
+		</script>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>설문조사</h2>
+									<p>위생 상태, 환경, 인테리어 및 식공간 연출, 재방문 의사에 대한 설문 조사를 하였습니다.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>심장박동</h2>
+									<p>1주간 친구, 가족, 지인과 함께 세분화한 식당 종류별로 맛집탕방을 하여 심박수 측정기 어플로 측정하였습니다.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/books-2383396_1920.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>학술지</h2>
+									<p>색상, 식당분위기, 맛, 직원, 인테리어, 향을 중심으로 조사를 하였습니다.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li><h4>FIBO_Busan_Natural_Science & DEU_HCI_RAPPORT</h4></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
